@@ -1,5 +1,5 @@
 ﻿// Author: Chi-Hao Kuo
-// Updated: 11/16/2014
+// Updated: 12/1/2015
 // All content © 2014 DigiPen(USA) Corporation, all rights reserved.
 
 /******************************************************************************
