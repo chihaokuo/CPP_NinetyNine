@@ -2,6 +2,25 @@
 // Updated: 11/16/2014
 // All content © 2014 DigiPen(USA) Corporation, all rights reserved.
 
+/******************************************************************************
+Assumption:
+
+There are human player (ask for input), and 3 types of player AI. It shows the 
+current game state and which cards the player has. After the player deals a
+card it refills a new card to the player, and calculate the game state to check
+if the player loses the game.
+
+Approach:
+
+1. Have enum for 4 types of player.
+2. For human player, it prints out information and asks for input.
+3. For random AI, randomly pick a card.
+4. For dumb AI, Only pick the highest possible number of cards.
+3. For smart player, it tries to pick the highest possible number of cards that
+   will not result in losing. Then pick the special card depend on predefined
+   weight.
+******************************************************************************/
+
 #include <cstdlib>		// std::rand
 
 #include "nintynine.h"
@@ -171,3 +190,12 @@ int Player::PlayerSmart(int total)
 	else
 		return special_index;
 }
+
+/******************************************************************************
+Unit tests:
+1. human vs. random for 2 matches. Human always win.
+2. random vs. dumb for 100 matches. Dumb wins 55% of the time.
+3. random vs. smart for 100 matches. Random wins less than 5% of the time.
+4. dumb vs. smart for 100 matches. Dumb wins less than 10% of the time.
+5. smart vs. smart for 100 matches. Each one should win 50% of the time.
+******************************************************************************/
